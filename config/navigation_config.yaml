@@ -1,0 +1,25 @@
+target_system: 1               UAV ID
+
+local_planner:
+  max_linear_velocity: 2.0       # m/s
+  max_linear_acceleration: 1.0   # m/s²
+  max_angular_velocity: 1.5      # rad/s
+  max_angular_acceleration: 0.8  # rad/s²
+  max_vertical_velocity: 0.5     # m/s
+  max_vertical_acceleration: 0.2 # m/s²
+  time_step: 0.05                # s
+
+landing:
+  v_initial: 0.3       # m/s, velocidad inicial de descenso
+  v_min: 0.1           # m/s, velocidad mínima (saturación)
+  decay_rate: 0.05     # m/s por segundo de descenso
+  max_duration: 120.0  # s, duración máxima del aterrizaje
+  time_step: 0.05      # s, intervalo de publicación de setpoints
+
+topics:                          # opcional, valores por defecto PX4
+  vehicle_local_position:  /px4_1/fmu/out/vehicle_local_position
+  vehicle_global_position: /px4_1/fmu/out/vehicle_global_position
+  vehicle_status:          /px4_1/fmu/out/vehicle_status
+  trajectory_setpoint:     /px4_1/fmu/in/trajectory_setpoint
+  vehicle_command:         /px4_1/fmu/in/vehicle_command
+  offboard_control_mode:   /px4_1/fmu/in/offboard_control_mode

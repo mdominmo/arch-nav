@@ -1,0 +1,22 @@
+#ifndef NAVIGATION_STATE_REGISTER__CONSTANTS__VEHICLE_STATUS_STATES_HPP_
+#define NAVIGATION_STATE_REGISTER__CONSTANTS__VEHICLE_STATUS_STATES_HPP_
+
+#include <cstdint>
+
+namespace arch_nav::constants {
+
+enum class VehicleStatusStates : int32_t {
+  STATE_UNKNOWN = -1,
+  STATE_DISARMED = 0,
+  STATE_ARMED = 1,
+  STATE_TAKEOFF = 2,
+  STATE_HOLD = 3,
+  STATE_GOING_TO_WAYPOINT = 4,
+  STATE_ON_AIR = 5,
+  STATE_RTL = 6,
+  STATE_OFFBOARD = 7
+};
+
+}  // namespace arch_nav::constants
+
+#endif  // NAVIGATION_STATE_REGISTER__CONSTANTS__VEHICLE_STATUS_STATES_HPP_
